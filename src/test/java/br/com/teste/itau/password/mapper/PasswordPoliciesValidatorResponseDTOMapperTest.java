@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import br.com.teste.itau.password.builder.PasswordPoliciesValidatorResponseDTOBuilder;
 import br.com.teste.itau.password.dto.PasswordPoliciesValidatorResponseDTO;
 import br.com.teste.itau.password.dto.ResponseBaseDTO;
 import br.com.teste.itau.password.enumeration.PasswordRuleError;
@@ -20,7 +21,7 @@ public class PasswordPoliciesValidatorResponseDTOMapperTest {
 	@Test
 	public void returnAValidResponseBaseDTO() {
 		PasswordPoliciesValidatorResponseDTO mock = mockPasswordPoliciesValidatorResponseDTO();
-		ResponseBaseDTO responseBaseDTO = PasswordPoliciesValidatorResponseDTOMapper.from(mock);
+		ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> responseBaseDTO = PasswordPoliciesValidatorResponseDTOMapper.from(mock);
 		
 		assertEquals(responseBaseDTO.getStatus(), STATUS_CODE_OK);
 		assertEquals(responseBaseDTO.getData(), mock);
@@ -31,7 +32,7 @@ public class PasswordPoliciesValidatorResponseDTOMapperTest {
 		List<PasswordRuleError> errors = new ArrayList<>();
 		errors.add(PasswordRuleError.MIN_DIGITS);
 		PasswordPoliciesValidatorResponseDTO mock = mockPasswordPoliciesValidatorResponseDTO(errors);
-		ResponseBaseDTO responseBaseDTO = PasswordPoliciesValidatorResponseDTOMapper.from(mock);
+		ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> responseBaseDTO = PasswordPoliciesValidatorResponseDTOMapper.from(mock);
 		
 		assertEquals(responseBaseDTO.getStatus(), STATUS_CODE_BAD_REQUEST);
 		assertEquals(responseBaseDTO.getData(), mock);
@@ -39,7 +40,7 @@ public class PasswordPoliciesValidatorResponseDTOMapperTest {
 	
 	@Test
 	public void returnAnInvalidesponseBaseDTOToNullPasswordPoliciesValidatorResponseDTO() {
-		ResponseBaseDTO responseBaseDTO = PasswordPoliciesValidatorResponseDTOMapper.from(null);
+		ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> responseBaseDTO = PasswordPoliciesValidatorResponseDTOMapper.from(null);
 		assertEquals(responseBaseDTO.getStatus(), STATUS_CODE_BAD_REQUEST);
 		assertNull(responseBaseDTO.getData());
 	}
@@ -49,7 +50,7 @@ public class PasswordPoliciesValidatorResponseDTOMapperTest {
 	}
 	
 	private static PasswordPoliciesValidatorResponseDTO mockPasswordPoliciesValidatorResponseDTO(List<PasswordRuleError> errors) {
-		PasswordPoliciesValidatorResponseDTO mock = new PasswordPoliciesValidatorResponseDTO.Builder(errors)
+		PasswordPoliciesValidatorResponseDTO mock = new PasswordPoliciesValidatorResponseDTOBuilder(errors)
     			.build();
 		return mock;
 	}

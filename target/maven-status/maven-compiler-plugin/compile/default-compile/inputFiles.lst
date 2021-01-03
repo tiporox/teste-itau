@@ -1,4 +1,6 @@
 /home/tiporox/dev/projetos/teste-itau/teste-itau/src/main/java/br/com/teste/itau/password/rule/MinUppercaseLetterRule.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/main/java/br/com/teste/itau/password/builder/PasswordPoliciesValidatorResponseDTOBuilder.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/main/java/br/com/teste/itau/password/builder/ResponseBaseDTOBuilder.java
 /home/tiporox/dev/projetos/teste-itau/teste-itau/src/main/java/br/com/teste/itau/password/mapper/PasswordPoliciesValidatorResponseDTOMapper.java
 /home/tiporox/dev/projetos/teste-itau/teste-itau/src/main/java/br/com/teste/itau/password/rule/NoCharsRepetitionsRule.java
 /home/tiporox/dev/projetos/teste-itau/teste-itau/src/main/java/br/com/teste/itau/password/rule/MinLowrcaseLetterRule.java

@@ -1,5 +1,6 @@
 package br.com.teste.itau.password.mapper;
 
+import br.com.teste.itau.password.builder.ResponseBaseDTOBuilder;
 import br.com.teste.itau.password.dto.PasswordPoliciesValidatorResponseDTO;
 import br.com.teste.itau.password.dto.ResponseBaseDTO;
 
@@ -9,15 +10,15 @@ public class PasswordPoliciesValidatorResponseDTOMapper {
 		
 	}
 	
-	public static ResponseBaseDTO from(PasswordPoliciesValidatorResponseDTO passwordPoliciesValidatorResponseDTO) {
+	public static ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> from(PasswordPoliciesValidatorResponseDTO passwordPoliciesValidatorResponseDTO) {
 		if(passwordPoliciesValidatorResponseDTO != null) {
-			ResponseBaseDTO responseDTO = ResponseBaseDTO.builder()
+			ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> responseDTO = new ResponseBaseDTOBuilder<PasswordPoliciesValidatorResponseDTO>()
 				.data(passwordPoliciesValidatorResponseDTO)
 				.status(passwordPoliciesValidatorResponseDTO.isValid() ? 200 : 400)
 				.build();
 			return responseDTO;
 		}
-		return ResponseBaseDTO.builder()
+		return new ResponseBaseDTOBuilder<PasswordPoliciesValidatorResponseDTO>()
 				.data(null)
 				.status(400)
 				.build();

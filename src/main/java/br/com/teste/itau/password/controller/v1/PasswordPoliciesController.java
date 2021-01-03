@@ -24,9 +24,9 @@ public class PasswordPoliciesController {
 	private PasswordPoliciesValidatorService passwordPoliciesValidatorService;
 	
 	@PostMapping(path = "validate", produces = {"application/json"})
-	ResponseBaseDTO validate(@Valid @RequestBody PasswordPoliciesValidatorDTO passwordPoliciesValidatorDTO, HttpServletResponse response) {
+	public ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> validate(@Valid @RequestBody PasswordPoliciesValidatorDTO passwordPoliciesValidatorDTO, HttpServletResponse response) {
 		PasswordPoliciesValidatorResponseDTO passwordPoliciesValidatorResponseDTO = passwordPoliciesValidatorService.isValid(passwordPoliciesValidatorDTO);
-		ResponseBaseDTO responseDTO = PasswordPoliciesValidatorResponseDTOMapper.from(passwordPoliciesValidatorResponseDTO);
+		ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> responseDTO = PasswordPoliciesValidatorResponseDTOMapper.from(passwordPoliciesValidatorResponseDTO);
 		response.setStatus(responseDTO.getStatus());
 		return responseDTO;
 	}

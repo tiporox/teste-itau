@@ -2,17 +2,17 @@ package br.com.teste.itau.password.dto;
 
 import java.util.Date;
 
-import lombok.Builder;
 import lombok.Getter;
+import lombok.Setter;
 
+@Setter
 @Getter
-@Builder
-public class ResponseBaseDTO {
+public class ResponseBaseDTO<T> {
 	
-	private final Object data;
-	private final Integer status;
-	private final String error;
-	private final String message;
+	private T data;
+	private Integer status;
+	private String error;
+	private String message;
 	private final Date timestamp = new Date();
 	
 }

@@ -14,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
+import br.com.teste.itau.password.builder.PasswordPoliciesValidatorResponseDTOBuilder;
 import br.com.teste.itau.password.dto.PasswordPoliciesValidatorDTO;
 import br.com.teste.itau.password.dto.PasswordPoliciesValidatorResponseDTO;
 import br.com.teste.itau.password.dto.ResponseBaseDTO;
@@ -49,7 +50,7 @@ public class PasswordPoliciesControllerTest {
 
     	Mockito.when(service.isValid(passwordPoliciesValidatorDTO)).thenReturn(mockServiceReturn);
     	
-    	ResponseBaseDTO response = controller.validate(passwordPoliciesValidatorDTO, httpResponse);
+    	ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> response = controller.validate(passwordPoliciesValidatorDTO, httpResponse);
     	PasswordPoliciesValidatorResponseDTO responseCasted = (PasswordPoliciesValidatorResponseDTO)response.getData();
     	
     	assertEquals(response.getStatus(), STATUS_CODE_BAD_REQUEST);
@@ -67,7 +68,7 @@ public class PasswordPoliciesControllerTest {
 
     	Mockito.when(service.isValid(passwordPoliciesValidatorDTO)).thenReturn(mockServiceReturn);
     	
-    	ResponseBaseDTO response = controller.validate(passwordPoliciesValidatorDTO, httpResponse);
+    	ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> response = controller.validate(passwordPoliciesValidatorDTO, httpResponse);
     	PasswordPoliciesValidatorResponseDTO responseCasted = (PasswordPoliciesValidatorResponseDTO)response.getData();
     	
     	assertEquals(response.getStatus(), STATUS_CODE_OK);
@@ -80,7 +81,7 @@ public class PasswordPoliciesControllerTest {
     @Test
     public void assertResponseWithNullParam() {
 
-    	ResponseBaseDTO response = controller.validate(null, httpResponse);
+    	ResponseBaseDTO<PasswordPoliciesValidatorResponseDTO> response = controller.validate(null, httpResponse);
     	
     	assertEquals(response.getStatus(), STATUS_CODE_BAD_REQUEST);
     	assertNull(response.getData());
@@ -92,7 +93,7 @@ public class PasswordPoliciesControllerTest {
 	}
 	
 	private static PasswordPoliciesValidatorResponseDTO mockPasswordPoliciesValidatorResponseDTO(List<PasswordRuleError> errors) {
-		PasswordPoliciesValidatorResponseDTO mock = new PasswordPoliciesValidatorResponseDTO.Builder(errors)
+		PasswordPoliciesValidatorResponseDTO mock = new PasswordPoliciesValidatorResponseDTOBuilder(errors)
     			.build();
 		return mock;
 	}

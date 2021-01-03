@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import br.com.teste.itau.password.builder.PasswordPoliciesValidatorResponseDTOBuilder;
 import br.com.teste.itau.password.dto.PasswordPoliciesValidatorDTO;
 import br.com.teste.itau.password.dto.PasswordPoliciesValidatorResponseDTO;
 import br.com.teste.itau.password.enumeration.PasswordRuleError;
@@ -44,7 +45,7 @@ public class PasswordPoliciesValidatorServiceImpl implements PasswordPoliciesVal
     		}
     	});
 
-    	return new PasswordPoliciesValidatorResponseDTO.Builder(errors)
+    	return new PasswordPoliciesValidatorResponseDTOBuilder(errors)
     			.build();
     }
 
