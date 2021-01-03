@@ -4,16 +4,18 @@ import org.apache.commons.lang3.StringUtils;
 
 import br.com.teste.itau.password.enumeration.PasswordRuleError;
 
-public class NonInvalidCharactersRule implements PasswordRule {
+public class MinSpecialCharsRule implements PasswordRule {
+	
+	private static final Integer MIN = 1;
 
 	@Override
 	public boolean isValid(final String password) {
-		return StringUtils.isNotBlank(password) && password.replaceAll("[^\\s]", "").length() == 0;
+		return StringUtils.isNotBlank(password) && password.replaceAll("[^\\!@#\\$\\%\\^&\\*()\\-\\+]", "").length() >= MIN;
 	}
 
 	@Override
 	public PasswordRuleError getError() {
-		return PasswordRuleError.NON_INVALID_CHARACTERS;
+		return PasswordRuleError.MIN_SPECIAL_CHARS;
 	}
 
 }

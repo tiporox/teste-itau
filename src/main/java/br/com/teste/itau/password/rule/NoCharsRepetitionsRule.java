@@ -4,26 +4,28 @@ import org.apache.commons.lang3.StringUtils;
 
 import br.com.teste.itau.password.enumeration.PasswordRuleError;
 
-public class NonCharactersRepetitionRule implements PasswordRule {
+public class NoCharsRepetitionsRule implements PasswordRule {
 
 	@Override
 	public boolean isValid(final String password) {
 
 		if(StringUtils.isNotBlank(password)) {
-			for(int i = 1; i < password.length(); i++) {
+			for(int i = 0; i < password.length(); i++) {
 				char currentLetter = password.toLowerCase().charAt(i);
-				char beforeLetter = password.toLowerCase().charAt(i - 1);
-				if(currentLetter == beforeLetter) {
+				int count = StringUtils.countMatches(password.toLowerCase(), currentLetter);
+				if(count > 1) {
 					return false;
 				}
 			}
-		}
+		} else {
+			return false;
+		}		
 		return true;
 	}
 
 	@Override
 	public PasswordRuleError getError() {
-		return PasswordRuleError.NON_CHARACTER_REPETITION;
+		return PasswordRuleError.NON_CHAR_REPETITION;
 	}
 
 }

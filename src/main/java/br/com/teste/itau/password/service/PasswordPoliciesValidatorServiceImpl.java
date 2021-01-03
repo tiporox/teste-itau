@@ -12,10 +12,10 @@ import br.com.teste.itau.password.enumeration.PasswordRuleError;
 import br.com.teste.itau.password.rule.MinDigitsRule;
 import br.com.teste.itau.password.rule.MinLowrcaseLetterRule;
 import br.com.teste.itau.password.rule.MinSizeRule;
-import br.com.teste.itau.password.rule.MinSpecialCharactersRule;
+import br.com.teste.itau.password.rule.MinSpecialCharsRule;
 import br.com.teste.itau.password.rule.MinUppercaseLetterRule;
-import br.com.teste.itau.password.rule.NonCharactersRepetitionRule;
-import br.com.teste.itau.password.rule.NonInvalidCharactersRule;
+import br.com.teste.itau.password.rule.NoCharsRepetitionsRule;
+import br.com.teste.itau.password.rule.NonInvalidCharsRule;
 import br.com.teste.itau.password.rule.PasswordRule;
 
 @Service
@@ -30,9 +30,9 @@ public class PasswordPoliciesValidatorServiceImpl implements PasswordPoliciesVal
 			new MinDigitsRule(),
 			new MinLowrcaseLetterRule(),
 			new MinUppercaseLetterRule(),
-			new MinSpecialCharactersRule(),
-			new NonCharactersRepetitionRule(),
-			new NonInvalidCharactersRule()
+			new MinSpecialCharsRule(),
+			new NoCharsRepetitionsRule(),
+			new NonInvalidCharsRule()
 		);
 	}
 
@@ -44,9 +44,7 @@ public class PasswordPoliciesValidatorServiceImpl implements PasswordPoliciesVal
     		}
     	});
 
-    	return PasswordPoliciesValidatorResponseDTO.builder()
-    			.errors(errors)
-    			.isValid(errors.size() == 0)
+    	return new PasswordPoliciesValidatorResponseDTO.Builder(errors)
     			.build();
     }
 

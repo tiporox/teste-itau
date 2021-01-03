@@ -1,1 +1,10 @@
-/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/ApplicationTests.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/rule/MinLowrcaseLetterRuleTest.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/rule/MinSpecialCharsRuleTest.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/ApplicationTests.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/service/PasswordPoliciesValidatorServiceImplTest.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/mapper/PasswordPoliciesValidatorResponseDTOMapperTest.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/rule/MinSizeRuleTest.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/rule/MinDigitsRuleTest.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/rule/NonInvalidCharsRuleTest.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/rule/MinUppercaseLetterRuleTest.java
+/home/tiporox/dev/projetos/teste-itau/teste-itau/src/test/java/br/com/teste/itau/password/rule/NoCharsRepetitionsRuleTest.java

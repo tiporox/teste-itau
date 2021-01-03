@@ -10,7 +10,7 @@ import lombok.Getter;
 public class ResponseBaseDTO {
 	
 	private final Object data;
-	private final Integer status = 200;
+	private final Integer status;
 	private final String error;
 	private final String message;
 	private final Date timestamp = new Date();
