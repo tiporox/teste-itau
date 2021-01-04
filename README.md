@@ -5,7 +5,7 @@
 # Pré-requisitos para executar o projeto localmente:
  - JDK Java 11+ instalado.
  - Maven 3+ instalado;
- - PLugin IDE lombok
+ - Plugin IDE lombok
 
 
 # Executando o projeto:
