@@ -38,7 +38,7 @@ public class PasswordPoliciesValidatorServiceImplTest {
 		assertTrue(response.getErrors().contains(PasswordRuleError.MIN_SIZE));
 		assertTrue(response.getErrors().contains(PasswordRuleError.MIN_SPECIAL_CHARS));
 		assertTrue(response.getErrors().contains(PasswordRuleError.MIN_UPPERCASE_LETTER));
-		assertTrue(response.getErrors().contains(PasswordRuleError.NON_CHAR_REPETITION));
+		assertTrue(response.getErrors().contains(PasswordRuleError.NO_CHAR_REPETITION));
 		assertTrue(response.getErrors().contains(PasswordRuleError.NON_INVALID_CHARS));
 	}
 	
@@ -54,7 +54,7 @@ public class PasswordPoliciesValidatorServiceImplTest {
 		assertTrue(response.getErrors().contains(PasswordRuleError.MIN_SIZE));
 		assertTrue(response.getErrors().contains(PasswordRuleError.MIN_SPECIAL_CHARS));
 		assertTrue(response.getErrors().contains(PasswordRuleError.MIN_UPPERCASE_LETTER));
-		assertTrue(response.getErrors().contains(PasswordRuleError.NON_CHAR_REPETITION));
+		assertTrue(response.getErrors().contains(PasswordRuleError.NO_CHAR_REPETITION));
 		assertTrue(response.getErrors().contains(PasswordRuleError.NON_INVALID_CHARS));
 	}
 	

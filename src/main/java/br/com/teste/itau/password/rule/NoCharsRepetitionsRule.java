@@ -25,7 +25,7 @@ public class NoCharsRepetitionsRule implements PasswordRule {
 
 	@Override
 	public PasswordRuleError getError() {
-		return PasswordRuleError.NON_CHAR_REPETITION;
+		return PasswordRuleError.NO_CHAR_REPETITION;
 	}
 
 }

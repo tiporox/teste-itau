@@ -18,7 +18,7 @@ public class NoCharsRepetitionsRuleTest {
 		NoCharsRepetitionsRule target = new NoCharsRepetitionsRule();
 		
 		assertFalse(target.isValid(password));
-		assertEquals(target.getError(), PasswordRuleError.NON_CHAR_REPETITION);
+		assertEquals(target.getError(), PasswordRuleError.NO_CHAR_REPETITION);
 	}
 	
 	@Test
@@ -27,7 +27,7 @@ public class NoCharsRepetitionsRuleTest {
 		NoCharsRepetitionsRule target = new NoCharsRepetitionsRule();
 		
 		assertTrue(target.isValid(password));
-		assertEquals(target.getError(), PasswordRuleError.NON_CHAR_REPETITION);
+		assertEquals(target.getError(), PasswordRuleError.NO_CHAR_REPETITION);
 	}
 	
 	@Test
@@ -36,7 +36,7 @@ public class NoCharsRepetitionsRuleTest {
 		Arrays.asList("aa", "BB", "Cc", "11", "a123456789a").forEach(password -> {
 			NoCharsRepetitionsRule target = new NoCharsRepetitionsRule();
 			assertFalse(target.isValid(password));
-			assertEquals(target.getError(), PasswordRuleError.NON_CHAR_REPETITION);
+			assertEquals(target.getError(), PasswordRuleError.NO_CHAR_REPETITION);
 		});
 
 	}

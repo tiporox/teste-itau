@@ -5,10 +5,16 @@
 # Pré-requisitos para executar o projeto localmente:
  - JDK Java 11+ instalado.
  - Maven 3+ instalado;
+ - PLugin IDE lombok
 
 
 # Executando o projeto:
 
+Instalando lombok:
+
+```sh
+https://projectlombok.org/setup/eclipse
+```
 Clonando o projeto do repositório:
 
 ```sh
@@ -108,13 +114,13 @@ Foi realizado uma cobertura de aproximadamente 90% do código fonte, com testes 
 ```sh
 [INFO] Results:
 [INFO] 
-[INFO] Tests run: 42, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Tests run: 46, Failures: 0, Errors: 0, Skipped: 0
 [INFO] 
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  4.616 s
-[INFO] Finished at: 2021-01-03T19:38:25-03:00
+[INFO] Total time:  7.432 s
+[INFO] Finished at: 2021-01-04T08:59:42-03:00
 [INFO] ------------------------------------------------------------------------
 ```
 

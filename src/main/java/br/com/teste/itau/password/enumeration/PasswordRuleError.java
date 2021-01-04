@@ -14,7 +14,7 @@ public enum PasswordRuleError {
 	MIN_LOWERCASE_LETTER("PASSWORD_MIN_LOWERCASE_LETTER_ERROR", "Password must contain at least one lowercase letter"),
 	MIN_UPPERCASE_LETTER("PASSWORD_MIN_UPPERCASE_LETTER_ERROR", "Password must contain at least one uppercase letter"),
 	MIN_SPECIAL_CHARS("PASSWORD_MIN_SPECIAL_CHARS_ERROR", "Password must contain at least one special chars !@#$%^&*()-+"),
-	NON_CHAR_REPETITION("PASSWORD_NON_CHAR_REPETITION_ERROR", "Password can't have chars repetition"),
+	NO_CHAR_REPETITION("PASSWORD_NO_CHAR_REPETITION_ERROR", "Password can't have chars repetition"),
 	NON_INVALID_CHARS("PASSWORD_NON_INVALID_CHARS_ERROR", "Password can't have invalids chars, check spaces");
 	
 	private String message;
